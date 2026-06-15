@@ -4,19 +4,7 @@ interface BondSummaryProps {
   summary: BondSummary | null;
 }
 
-function formatPercent(value: number): string {
-  if (!Number.isFinite(value)) return '-';
-  return `${(value * 100).toFixed(2)}%`;
-}
 
-function formatCurrency(value: number): string {
-  if (!Number.isFinite(value)) return '-';
-  return value.toLocaleString(undefined, {
-    style: 'currency',
-    currency: 'AED',
-    maximumFractionDigits: 2,
-  });
-}
 
 export function BondSummaryView({ summary }: BondSummaryProps) {
   if (!summary) {
