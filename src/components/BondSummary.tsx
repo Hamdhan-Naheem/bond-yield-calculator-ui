@@ -1,6 +1,13 @@
 import type { BondSummary } from '../types/bondTypes';
 
+interface BondSummaryProps {
+  summary: BondSummary | null;
+}
 
+function formatPercent(value: number): string {
+  if (!Number.isFinite(value)) return '-';
+  return `${(value * 100).toFixed(2)}%`;
+}
 
 function formatCurrency(value: number): string {
   if (!Number.isFinite(value)) return '-';
